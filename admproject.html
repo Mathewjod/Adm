@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADM Project</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            position: relative; /* Ensure the body is the reference point for positioning */
+        }
+        h1, h2 {
+            margin: 0;
+        }
+        .container {
+            max-width: 700px;
+            margin: 50px auto;
+            background: #e5e1ff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            font-size: 2rem;
+            color: black;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        button {
+            display: inline-block;
+            margin: 10px 5px;
+            padding: 12px 30px;
+            font-size: 16px;
+            font-family: inherit;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: blue;
+            color: rgb(255, 255, 255);
+            transition: transform 0.2s, background-color 0.3s;
+        }
+        button:hover {
+            transform: translateY(-3px);
+        }
+        .orange-button {
+            background-color: orange;
+        }
+        .green-button {
+            background-color: green;
+        }
+        .white-button {
+            background-color: white;
+            color: #333; /* Adjust text color for visibility */
+            border: 1px solid #ddd;
+        }
+        .group, .content {
+            margin-top: 30px;
+            padding: 20px;
+            background: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            display: none; /* Hidden by default */
+        }
+        .group h2, .content h2 {
+            font-size: 1.8rem;
+            color: #444;
+            margin-bottom: 15px;
+            border-bottom: 2px solid blue;
+            padding-bottom: 5px;
+            text-align: center;
+        }
+        .members {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        .member {
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: #ffffff;
+            padding: 15px;
+            text-align: center;
+            font-size: 1rem;
+            border-radius: 8px;
+            font-weight: bold;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.3s;
+        }
+        .member:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+        .roll-number {
+            display: none;
+            font-size: 0.9rem;
+            color: #ffffff;
+            margin-top: 10px;
+            text-align: center;
+            animation: slideDown 0.3s ease-in-out;
+        }
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .special-mention {
+            position: fixed;
+            bottom: 10px;
+            right: 15px;
+            font-size: 0.8rem;
+            color: #888;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>The Indian Renaissance</h1>
+        <h5>-By Sanjeev Sanyal</h5>
+        <button id="summaryBtn">Summary</button>
+        <button id="flashcardBtn">Highlights</button>
+        <button id="groupBtn">Group Members</button>
+
+        <div class="content" id="summary">
+            <h2>Summary</h2>
+            <p>This is a brief summary of the book. It covers the main themes and ideas presented in the text.</p>
+            <div class="button-container" style="margin-bottom: 20px;">
+                <button class="chapterBtn orange-button" data-chapter="
+                Historical Background of Invasions:
+                
+                The Muslim invasions of India started with the attacks by Mahmud of Ghazni from 1000 to 1025 and then progressed with the conquest of Muhammad Ghori in 1192.
+                These atrocities killed thousands of people, burnt down universities and temples, and tore the social order of India.
+                Comparison with Earlier Invasions:
+                
+                India had undergone successive waves of invasion previously (Huns, Bactrians, Indo-Greeks, etc.) but still withstood and assimilated those elements without a prolonged decline.
+                The pretext as given in the text is that Muslim conquest was not a single cause that led to the fall of India but instead a sign of larger issues at hand.
+                Technical Regression:
+                
+                After the eleventh century, Indian technological progress and military force declined, which eventually resulted in later conquests and colonization.
+                Decline of Military Technology:
+                India proceeded to wage war with war elephants even against modern artillery attacks.
+                Cultural Attitudes:
+                
+                A major reason for India's decline was loss of spirit of entrepreneurship and receptiveness towards new ideas, resulting in intellectual fossilization.
+                Al Beruni's comments about the Indian attitude toward knowledge indicate growing insularity and haughtiness.
+                Decline of Sanskrit:
+                
+                The growth of Sanskrit epitomized the general decline in culture. It became too prescriptive, which suppressed creativity and ingenuity.
+                Obsession with the purity of the tongue matched the excessive institutionalization in society, which, in turn, strangled growth in their own context.
+                Colonial Era and Rediscovery:
+                
+                Introduction of new institutions and English language by Britain in their colonial period, especially after the formation of the East India Company, was a great revival of India's intellect.
+                Modernizing voices and openness to new ideas found home in persons such as Raja Ram Mohun Roy and Ishwar Chandra Vidyasagar in the intelligentsia.
+                Post-Independence Challenges: Even when the above earlier reform movements were taking place, post-independence India turned inward looking, which killed all potential further progress.
+                The lack of innovation and openness in the leadership resulted in a chain of decline that matched, over time, historical patterns of cultural stagnation.
+                Lessons of Other Civilizations
+                The article draws comparisons with other civilizations such as China and Western Europe that lost power due to cultural insularity and failure to live to new ideas and technologies.
+                Themes
+                Decline of Civilization: That a civilization decay is not only from outside but also through the inner cultural mind-sets as well as the lack of innovation.
+                Openness vs. Insularity: The role of openness in culture and the reception and pursuit of novelty is the key for advance, survival
+                The Evolution of the Language as a Mirror Reflecting the Health and Adaptation Ability of Civilization.
+                Historical Continuity: A prevalent belief in patterns of decline and resurgence, with lessons applied to contemporary society
+                The book is a textured interplay of historical events, cultural attitudes, and technological change that culminated in India's long-term decline, only to demand openness and adaptability in the face of changing circumstances.">Chapter 1</button>
+                <button class="chapterBtn orange-button" data-chapter="The socialist policies of Jawaharlal Nehru were opposed by leaders like C. Rajagopalachari, who later quit the Congress Party and formed the Swatantra Party that espoused liberal economic policies.
+                Nehru consolidation of power needed a populist political atmosphere and a system of patronage and linked control over the economy with political power.
+                Corruption and Governance:
+                
+                Corruption was a phenomenon that burst forth not long after Nehru had taken office; the Mundhra Scandal of 1957 was an instance and highlighted the dangers of interventionist government in the economy.
+                Import substitution model, pursued initially, revealed serious weaknesses by the mid-1960s; even fewer intellectuals or politicians questioned the system.
+                Geo-political Context:
+                
+                The reaction to geopolitical pressures, the Bangladesh Liberation War in particular, drove India further into the Soviet Union's lap as a strategic ally and strengthened the state's grip over the economy.
+                The assassination of Indira Gandhi and the consequent political shocks did not change the economic policy path because Janata Party, like Congress, pursued the state-led strategy.
+                Economic Challenges of the 1980
+                
+                The economy was severely jolted by the Second Oil Shock and by droughts, with a severe fall in GDP and increased political agitation.
+                There were some structural reforms undertaken during the early years of the 1980s, but the basic socialist structure stayed intact, and the elite kept their support for state control.
+                1991 Crisis:
+                The balance-of-payments crisis in 1991 was due to skyrocketing oil prices and rising instability in politics, leading to a dire need for economic reform.
+                Rajiv Gandhi's assassination and subsequent political uncertainty brought him Narasimha Rao as Prime Minister who appointed Manmohan Singh as Finance Minister to reform the economic crisis.
+                
+                Economic Liberalization:
+                
+                These reforms initiated in 1991 had started to strip off the more pronounced elements of the earlier economic regime, liberalize trade, bring down state monopolies and invite foreign investments.
+                
+                And The initial results of these had promised much; reserves of foreign exchange increased, growth had accelerated-it meant a basic turn towards an open economy.
+                Cultural and Intellectual Resistance:
+                
+                Politics and intellectuals were not very enthusiastic about reforms as most of them were still in the grip of the old Nehruvian structure.
+                
+                Reforms became a panacea for failure rather than an entry process towards modernization. Therefore, the reforms came to be viewed as not worthy of a serious recognition.
+                
+                Legacy of the Reforms:
+                
+                The reforms of 1991 can be translated just as watershed events in the Indian experience, like independence in 1947, as it demonstrated a step away from an inward-looking attitude.
+                Liberalization opened new spaces in which entrepreneurship spirit in Indian society might first gain an opportunity to express itself.
+                Themes:
+                Political Patronage and Corruption: the entanglement of politics and economics under state control led to systemic corruption and inefficiency.
+                Resistance to Change: It proves the political and intellectual élite's resistance to challenging the status quo, even with evident failures.
+                Geopolitics: The external pressures bearing down on India's economic policies and alliances, mainly during crisis periods.
+                Crisis as a Transitioning Factor: The 1991 economic crisis thus acted as a point of change, as it forced India to reevaluate its policies and implement other changes.
+                Culture change: This phase from being inward to being outward-turned with globalization and competition saw a change in the cultural viewpoints of what being entrepreneurial and innovative means for an economy.
+                In general, the paper goes on to describe how closely political choice, economic policies, and cultural perspectives blended together in such a way to make this journey of India since independence into the liberalization of the early 1990s.">Chapter 2</button>
+                <button class="chapterBtn orange-button" data-chapter="The opening of back-office outsourcing organizations in India, particularly Gurgaon, introduced the concept of outsourcing to India.
+                Indian white-collar people were educated and low-priced, but earlier policies of autarchy had restricted them.
+                Third Phase of Economic Growth:
+                
+                The third phase of Indian economic growth started around 2003, with this period of economic development when the Indian psyche was somber because of previous failures in economic areas.
+                Even though some economists were cynical of the liberalization effects, the direct gains regarding restructurings in the banking and industrial sectors were clear.
+                Infrastructure:
+                The Vajpayee government initiated mega-infrastructure projects such as the 'Golden Quadrilateral,'' which was aimed at strengthening the road connectivity structure in the country.
+                Corporate Confidence and Globalisation:
+                Corporate business confidence began to take shape; companies like Bharat Forge started becoming global suppliers.
+                Indian companies started buying abroad, which gave a psychological turn to the view of Indian multinationals.
+                Rise of the Services Sector:
+                
+                The services sector started scaling up significantly, especially in mobile phone connections and IT services.
+                By 2007, the services sector accounted for over half of India GDP as agriculture and industry declined.
+                Rebirth of the Banking Sector:
+                
+                After cleaning up the non-performing loans, banks started to be aggressive lenders, and a credit boom has begun to propel the consumer demand and retail business.
+                Evolvement of Consumerism:
+                
+                Shopping malls and an entirely new retail experience were in demand because the Indian consumer wanted an updated shopping atmosphere.
+                Between 2003 and 2007, India GDP increased by almost 9% annually, thus drawing attention and investment in this country from all over the world.
+                Uniqueness of Indian Growth Model:
+                
+                Indian growth path differed from that of East Asia, which was an export-oriented manufacturing-based model. India instead used its educated workforce to pursue technology and service-orientated economy.
+                
+                The services sector has been the driver of growth with high contribution shares coming from IT, telecommunication amongst others.
+                Investment Patterns:
+                
+                Unlike in East Asian countries, India did not see strong acceleration of investment till after 2004 and had a relatively low fixed investment rate in the early 1990s.
+                Human Capital Dynamics:
+                India was under a very unique human capital situation with a highly educated but a partially underemployed middle class, which turned out to be an engine for post-liberalization growth.
+                Globalization and Technological Change:
+                The liberalization happened together with the revolution in telecommunications and therefore makes Indian knowledge workers participate in the global economy.
+                Globalization not only created demand for services but also transformed the social attitude, which led to a more entrepreneurial middle-class mindset.
+                Themes
+                Economy Transformation: Change from primarily agrarian economy to a service-oriented economy with services sector the major contributor of GDP.
+                Middle Class Role: Emergence of the skilled middle class who actually is now driving economic growth and seizes all the global opportunities.
+                Effect of Liberalization: Government reforms in 1991 and subsequent years, which gave a base for rapid growth and modernization in India.
+                Globalization: Cause-and-effect relationship between globalization and local economic circumstances, which placed a distinctive growth track for India than the other Asian economies.
+                Changing Social Norms: The shifting social perception of entrepreneurship and employment, especially among the educated middle class.
+                Overall, the passage provides an excellent overview of the factors that are contributing to the transformation in India's economy, focusing specifically on how the middle class and the services sector have been crucial to the narrative of India's growth.">Chapter 3</button>
+                <p></p>
+                <button class="chapterBtn white-button" data-chapter="The rise of the middle class is an indicator of successful economic development, just as it happened during Western Europe's Industrial Revolution.
+                Protomiddle class existed in India before British times, but it was the British decision to impart higher education in English that catalyzed the emergence of a modern middle class.
+                Role of English Education
+                
+                The British intended to produce a segment of Indians who might assist in the affairs of governance, decided Thomas Macaulay in his famous 1835 Minute on Indian Education.
+                Eminent Indian reformers such as Raja Ram Mohan Roy favored English education planned to open the doors of Western knowledge and technology for Indians because they realized that India was technologically backward.
+                Rise of the Middle Class:
+                
+                Middle class grew steadily during the 19th century, mainly in large cities like Bombay, Calcutta, and Madras.
+                This class began to shape literature, social ethos, and national consciousness that even led to the formation of Indian National Congress in 1885.
+                Post-Independence Opportunities:
+                Freedom in 1947 opened up horizons for the educated middle class, which occupied civil services, judiciary, and armed forces posts.
+                Nehru's investment strategy was focused on the public sector where whites have had more white-collar employment, and the white-collar employment base was regarded as too small.
+                Education and Skill Development:
+                
+                Technical institutes like the Indian Institutes of Technology were instituted by the government. Thus, technical deficiencies among the workforce were rectified. English remained a medium too because there was no technical literature in the regional languages. Thus, education took the dual track.
+                Housing and Community Development:
+                
+                Expansion of the middle class led to industrial townships and housing colonies which enabled bonding among middle-class families.
+                The new generation started to marry within their own circle and created a pan-Indian identity, dropping strong regional identities.
+                A Crisis in the Middle Class:
+                
+                The middle class could not outgrow stagnation at the end of the 1970s and 1980s primarily because of a lack of opportunities in the public sector and lagging entrepreneurial growth.
+                Many talented people chose to emigrate, seeking more promising opportunities abroad.
+                Impact of Liberalization in the 1990s:
+                
+                The early 1990s liberalization provided the educated middle class with an opportunity spree in which there was an increasing entrepreneurial activities, mainly in services.
+                
+                Foreign multinationals arrival, as well as dot-com boom changed the landscape of the job market, hence, changing the perception of the middle-class concerning remunerations.
+                Manpower Shortages and Wages Increases:
+                
+                By the mid 2000s, skilled labor shortage became evident, with wages going up rapidly in most sectors.
+                The return of the Indians who were abroad and interest of foreign professionals in the Indian market turned around the fortunes for the country.">Chapter 4</button>
+                <button class="chapterBtn" data-chapter="Liberalization has led to increased systemic efficiency-the example of Kerala fishermen shows access to better markets and lessened price variations.
+
+                Absolute poverty may have declined but relative inequality has risen, constituted by a rather easy-going middle class and business class eating more into their economic growth than the poor.
+                
+                Inequality and Unemployability:
+                
+                The growth model has created and continues to widen the gap of gulf between the skilful and unskilled creating a chasm between the employed and the unemployable.
+                Expansion of higher education is always the buzzword and it is necessary for social mobility and economic growth, especially among the talented lots from more humble backgrounds
+                Challenges in Higher Education:
+                
+                Though higher education has a long history in India, the existing system is drastically hit with major issues regarding the issue of quality where most institutions fail to provide essential skills for job markets.
+                The overall rate of graduation is too low for a country as big as India, and the quality is also bad, with outdated syllabuses and examination systems.
+                Historical Context:
+                
+                India has a rich tradition for higher education in ancient universities like Takshila and Nalanda, but the modern institution of higher education began only with the British colonial rule.
+                After independence, the number of universities has grown very fast. However, quality has been compromised to a tremendous extent, leading to a large shortage of skilled man power.
+                Quality Issues in Higher Education:
+                
+                Large numbers of graduates are 'unemployable; studies reflect that a good many have not the skills to get employed by multinational companies.
+                The curricula are obsolete; the infrastructure is pathetic and there's no emphasis on employability at all.
+                Demand for Overhaul:
+                This article supports the liberalization of the higher education sector to increase supply, quality, and meet the ever-growing demand in the new economy to produce skilled employees.
+                The existing state control and regulation is seen as a potential hindrance to further development. Moreover, there's a need for a market-driven solution in imparting knowledge.
+                Private Sector Participation:
+                
+                The success of private institutions such as NIIT to provide relevant training makes it obvious that the private sector can be utilized to fill skills gaps as well as scale up educational access.
+                The article supports opening the education sector to private and foreign institutions to increase competition and quality.
+                Social and Political Opposition to Change:
+                
+                Liberalization of the education sector generates substantive resistance from the academic establishment and political elite mainly for ideological reasons.
+                However, there is a growing recognition of a need for reform, much of which centers on independent regulation and increased private sector involvement.
+                Future Outlook:
+                
+                The conclusion to the passage leaves a hopeful sense that socio-economic shifts and rising demands for reform will eventually bring improvements to the higher education system of the country to benefit a wider population and support continued economic growth.
+                Topic:
+                Economic Growth and Education: Relationship between economic growth and the demand for a skilled labor force, highlighting the imperative role higher education should have in supporting further economic growth.
+                Inequality and Social Mobility: The widening gap between the educated and the uneducated and the implications this has for social mobility and economic opportunity.
+                Quality or Quantity of Education: Issues that an expanding system faces in providing quality education and presents demands for reform.
+                Role of the Private Sector: Possibility of creating a better quality education system and access, and possible constraint in public.
+                Political and Ideological Obstacles: Opposition by vested interest to change, and the need for a shift of mindset to take on market-driven solutions in education.
+                It gives an extensive overview of the challenges that the higher education system in India faces and critically emphasizes the role it plays in articulating India's economic future and social landscape.">Chapter 5</button>
+                <button class="chapterBtn white-button" data-chapter="The text is all about India's economic model gone through time, with a mix of positives and negatives. Some of the main positive factors are a large, educated middle class and improvement in the field of technology. Negative factors are low savings rates, heavy capital costs, and widespread illiteracy.
+
+                The author outlines two such significant shifts that would redefine India's economy: a demographic revolution and a primary education revolution. The term demographic shift refers to a decline in birth rates, a majority of the people being in the working age, who are expected to increase economic performance owing to increased labor supply and savings. Primary education revolution is an indication of steep growth in the attendance at primary school, mainly girls; this will reduce illiteracy and result in more skills for workers.
+                
+                As India shifts from skilled, white-collar worker to literate blue-collar, the text believes that domestic savings and investment will rise and fuel growth in manufacturing, construction, and services. While the author takes some pains to point to inadequacies in infrastructure, he points to the creation of infrastructure as an occasion for further economic activity.
+                
+                It ends with the text's recognition of potential risks wherein financial instability might come with governance reforms, mainly at the legal systems' level, if the benefits of changes in demography and education are to be harnessed properly. But then again with proactive policies, concludes the author, India has all the potential for economic transformation as a whole.">Chapter 6</button>
+                <p></p>
+                <button class="chapterBtn green-button" data-chapter="A strong judicial system is essential to good governance and the administration of justice, with intrinsic value that goes beyond economic consideration.
+
+                Legal reform should top the agenda of the reformed post-liberalization state.
+                
+                Common Law as Change Agent:
+                
+                It can become an effective mechanism for creating a revolution of law through judicial precedents if it is allowed to find its path organically.
+                Indian system differs from the civil-law systems wherein laws are static, in nature as change has to await legislation.
+                Current Weakness of Indian Legal/Judicial System
+                
+                Indian legal/judicial system still hasn't reached its potential and has a lot of demand for reform from great thinkers.
+                The legal framework comprises an extensive, lengthy, and voluminous body of law consisting of many outdated, contradictory, or unintelligible laws.
+                Problems with Existing Laws:
+                
+                There is no estimation on the number of laws that are in existence, with different estimates suggesting the number of existing laws varies widely and most of them date to the 19th century.
+                Outdated laws can be misused, thus giving rise to harassment and inefficiencies in the legal system.
+                Challenges in Enforcement:
+                
+                Thus, slow judicial processes hinder law enforcement and create significant backlog cases-more than 25 million backlog cases as of 2005.
+                The judiciary also considered as an essential component of enforcement but delay processing cases have led to a denial of justice.
+                Problems with the Criminal Justice System:
+                Most undertrials remain in limbo since they cannot afford bail or receive legal support.
+                High-profile cases, for instance, the Jessica Lall case, reflect the failures in the judicial system to produce timely justice.
+                Legal Reform:
+                Legal reform will entail developing a formal framework of rules governing social and economic interactions and making them enforceable.
+                
+                Only an effective legal system can ensure a market-based economy. In turn, this would pave the way for poverty reduction.
+                Proposed Reforms:
+                
+                The passage shows rationalization of the body of laws, simplification of provisions, and improving mechanisms for enforcement.
+                Proposed Reforms Increase the judges by numbers, improve the process of courts, and clear backlogs
+                Chance to Change:
+                Since Indian society and political economy are currently undergoing change; this hope for reform is emerging out of it.
+                The passage shows in the area of legal reform, with system-level grand gains even minimal public expenditure .
+                Themes:
+                Law is perceived as the cornerstone for good governance and a necessity for justice and stability of the economy.
+                Common Law Flexibility: The flexibility of common law, through which it can be changed in compliance with changes by judicial precedents, has been outlined.
+                Inflexibility and Obsolete Laws: The inflexibility and obsolete nature of the system are stated to hinder proper governance and economic development.
+                Importance of Timely Justice: It brings into notice the slowness of the judicial process and its delivery of justice.
+                Call for Thorough Legal Reform: There is a call for a holistic approach in legal reform, which would place importance on the betterment of the effectiveness and efficiency of the current legal system.
+                This gives a general account of the current Indian legal system and its problems, which is in urgent need of reform for better economic growth and social stability.">Chapter 7</button>
+                <button class="chapterBtn green-button" data-chapter="With the middle class becoming more significant, politics will also come under their influence and, sooner or later, lead to mid-class politicians and demands for electoral representation adjustments.
+                Boundary delimitation of constituencies has already started that considered changes in population and urbanization.
+                Middle-Class Political Power in Historical Perspective
+                
+                Asian nations such as South Korea and Indonesia have seen pervasive political transformation and democratization through the rise of the middle class.
+                Indian middle class will be demanding the reforms of higher education and governance institutions.
+                Modernization v/s Westernization:
+                Growth of the middle class would raise the question whether a balance could be made between modernization and westernization. Historical figures like Ram Mohan Roy, Mahatma Gandhi, and Jawaharlal Nehru represented different solutions to that tension.
+                A more confident Indian identity in the new urban middle class is better able to engage with global influences and mix elements of Indian and Western cultures.
+                Cultural Confidence and Language:
+                Less apologetic about being Indian, the new middle class is comfortable more so with English as an Indian language, which again represents a comingling of cultures.
+                Indigenous languages, including Hindi, are evolving and finding prominence through popular culture; however, English continues to hold its ground in the contexts of business and education.
+                Social Changes and Adaptations:
+                
+                The norm of the joint family is gradually being replaced by nuclear families in families, along with changing marriage sentiments.
+                
+                Modern answers to matchmaking through the internet have evolved in a nation while keeping the culture intact.
+                Environmental Cost of Growth:
+                
+                India's fast growth has been able to have stern environmental implications such as pollution and biodiversity loss.
+                The article underlines the importance of managing the environmental resources of India so that no permanent damage could be caused.
+                India's Economic Growth and Global Role:
+                
+                India has become a trillion-dollar economy, with a growing share of global GDP and increasing influence in international trade and finance.
+                The country can be expected to sustain high growth rates and maybe slowly start competing more directly with China in technology downgrades.
+                Soft Power vs. Hard Power:
+                
+                India's rise may not translate into aggressive militarism but rather soft power through its influences in culture, like through Bollywood and Indian popular films.
+                Cultural Openness Not To Be Underestimated
+                The role that interaction and cross-fertilization have played and continue to play in shaping India's global identity is the key point of emphasis in this passage.
+                Future Prospects:
+                
+                India's future is marked by cultural pride and economic growth and holds immense scope for significant contributions to world culture and trade.
+                Examples of Bollywood as well as the IPL Cricket tournament epitomize Indian capabilities in terms of innovation within today's global scenario.
+                Themes
+                Political Empowerment of the Middle Class: The new middle class has opportunities to redefine political equations and exert institutional reforms.
+                Cultural Identity and Globalization: There is a larger cultural development within which an assertive Indian identity is emerging in the context of globalization.
+                Environmental Sustainability: Responsible management of the environment is a critical challenge that accompanies economic growth.
+                Economic Transformation: A change in the trajectory of economy, India tends to move toward a more competitive position in the global markets, which involves an international role.
+                Soft Power Dynamics: The growth in Indian soft power through culture and entertainment is thus established as a mainstay of India's presence in the world.
+                Overall, the passage gives an all-rounded view of the multifaceted changes occurring in India while it negotiates its passage toward modernization, economic development, and the evolution of culture in the 21st century.">Chapter 8</button>
+                <button class="chapterBtn green-button" data-chapter="Economic Renaissance and Civilizational Revival: Economic renaissance of a civilization is an integral part of a larger civilizational revival, boosted by the pursuit for excellence in every sphere of human activity.
+                European Renaissance: The European Renaissance of the 15th-16th century was an era of wonder achieved through fantastic cultural, scientific, and artistic feats, all due to the lances of the merchant republics of Venice and Florence, which were financial hubs and art patrons.
+                Renaissance Innovations: The epoch brought along innovative minds in arts, sciences, and letters, besides other renaissance innovations including double-entry accounting, trading of financial securities, and the printing press that helped write or print knowledge freely.
+                Decline of Kolkata: 'A closed cultural and intellectual environment, intolerance of self-criticism, and resistance to innovation and new ideas' have led to the decline of Kolkata from being a cosmopolitan and advanced city.
+                Warning Story: The decline of Calcutta is a warning story for India, reminding of the teaching of confidence, imagination, and receptiveness to seize opportunities for growth and development.
+                Themes:
+                Economic and Cultural Renaissance: The article focuses on the fact that economic growth and cultural renaissance go hand in hand; a civilization's uninterrupted upward course depends on excellence in every department of human pursuit.
+                European Renaissance as an Example: The European Renaissance sets up the sense of how cultural and economic growth can be understood with dynamics from innovations in different fields to continue the momentum.
+                Decline of Kolkata as Cautionary Example: The instance of the decline of Kolkata can be seen as a cautionary example for India, highlighting the desirability of openness, self-criticism, and adaptability in sustaining growth and development.
+                Overall, the message is that growth and development should be viewed in an integrated, multi-dimensional way: economic and cultural renaissance, innovation, and adaptability to changing conditions.">Chapter 9</button>
+            </div>
+            <div id="chapterContent" class="chapter-content" style="display: none; padding: 10px; border: 1px solid #ddd; border-radius: 5px; background: #f9f9f9;"></div>
+        </div>
+
+        <div class="content" id="flashcard">
+            <h2>Highlights</h2>
+            <p>This section contains flashcards for each chapter of the book to help with quick revision.</p>
+            <div class="button-container" style="margin-bottom: 20px;">
+                <button class="chapterBtn orange-button" data-chapter="1947: Independence – India gained freedom from British rule, a significant milestone.
+                1991: Economic Liberalization – A major shift that opened India’s economy to the world.
+                Cultural Shift – 1991 marked a move towards a more open and innovative society.
+                Historical Roots – The transformation began in 19th-century Bengal with reformers like Raja Ram Mohan Roy.
+                Technological Revolution – Advancements in communication accelerated India’s global integration.
+                Emerging Middle Class – A new demographic demanding institutional and political change.
+                Civilizational Renaissance – Economic resurgence is tied to a broader cultural reawakening.">Chapter 1</button>
+                <button class="chapterBtn orange-button" data-chapter="Diverse Visions: India had multiple development ideologies post-1947, from Gandhi’s village-centric approach to communist principles.
+                Nehru’s Dominance: Jawaharlal Nehru became the leading force in shaping India’s policy direction.
+                Bureaucratic Controls: Nehru’s economic model emphasized state intervention and resource allocation through licenses.
+                Mahalanobis’s Model: The model aimed to accelerate development but reduced complexities to simple statistics.
+                Isolationist Approach: The strategy minimized global engagement, fostering a protectionist mentality.
+                Public Sector Focus: Large public-sector projects were prioritized over general education and private enterprise.
+                Temples of Modern India: Nehru viewed major infrastructure projects as symbols of India’s progress.
+                ">Chapter 2</button>
+                <button class="chapterBtn orange-button" data-chapter="1947 vs. 1991: 1947 marked a break; 1991 began ongoing reforms.
+                Narasimha Rao’s Reforms: Initial urgency in liberalization led to significant changes.
+                Tax Regime Improvement: Tax policies became less burdensome over time.
+                Rise of Entrepreneurship: New entrepreneurs emerged, revitalizing the market.
+                Aviation Industry Boom: New airlines flourished after deregulation.
+                Investment Climate: Foreign investment restrictions were significantly reduced.
+                Gradual Liberalization Impact: The cumulative effects of reforms shaped the economy.">Chapter 3</button>
+                <p></p>
+                <button class="chapterBtn white-button" data-chapter="Economic Development: The rise of the middle class is crucial for successful economic growth.
+                Industrial Revolution Impact: Industrialization in the West transformed social hierarchies and created new opportunities.
+                British Colonial Policies: The British introduced English education, fostering a new educated Indian class.
+                Raja Ram Mohan Roy: A key figure advocating for English education and social reform in India.
+                Cultural Complexity: The adoption of English reflected internal debates within Indian society.
+                Political Awakening: The Indian middle class began to gain political power and influence.
+                Language as Power: English education created a bridge between colonial rulers and the Indian populace.">Chapter 4</button>
+                <button class="chapterBtn" data-chapter="Economic Growth Surge: GDP grew nearly 9% annually from 2003-2007.
+                Rising Wealth Disparity: Indian billionaires became prominent, raising questions about inequality.
+                Poverty Statistics: Poverty declined from 51.3% in 1977 to 22% in 2004-05.
+                Job Creation Concerns: Employment growth slowed despite economic expansion.
+                Debate on Poverty Data: Disputes arose over the accuracy of poverty statistics from NSS.
+                Rural vs Urban Wages: Real wages increased significantly in both rural and urban settings.
+                Liberalization Impact: Free markets contributed more to poverty reduction than previous models.">Chapter 5</button>
+                <button class="chapterBtn white-button" data-chapter="Economic Model: India’s growth is influenced by a mix of positive and negative factors.
+                Demographic Shift: India’s population dynamics are changing, offering potential for economic growth.
+                Education Revolution: Significant improvements in primary education are underway.
+                Labor Supply: A larger, more literate workforce is expected in the coming years.
+                Investment Boom: Rising savings rates are anticipated to fuel increased domestic investment.
+                Global Integration: India is positioned to participate more actively in the global economy.
+                Job Creation: New job opportunities will emerge across various sectors, especially for blue-collar workers.">Chapter 6</button>
+                <p></p>
+                <button class="chapterBtn green-button" data-chapter="Economic Transformation: The cumulative impact of liberalization has reshaped India. 
+                Slow Progress: Reforms have been slow, erratic, and patchy due to political and institutional constraints. 
+                First-Generation Reforms: Focused on de-licensing and opening up foreign trade and investment. 
+                Second-Generation Reforms: Aim to reform institutions to better support a market economy. 
+                Role of the State: Shifts from reducing state involvement to reforming the state itself. 
+                General Governance: Essential for maintaining trust and collaboration in economic interactions. 
+                Legal Infrastructure: Key to establishing rules and enforcing contracts, ensuring growth benefits all. ">Chapter 7</button>
+                <button class="chapterBtn green-button" data-chapter="Asian Economic Boom: Countries like Japan, South Korea, and China have closed the economic gap with the West.
+                India’s Hyper-Growth Phase: India is poised for sustained high GDP growth and poverty alleviation.
+                Rapid Urbanization: Urbanization is expected to accelerate with economic development, as seen in East Asia.
+                China’s Urbanization: China’s urban population surged from 12% in 1951 to around 55% today.
+                India’s Reluctant Urbanization: India’s urban population grew slowly, from 17% in 1951 to 28.5% by 2001.
+                Mega-City Concentration: A significant portion of urban dwellers live in mega-cities, with a focus on Delhi, Mumbai, and Bangalore.
+                Migration Trends: Large cities attract rural and small-town migrants, reflecting uneven urban development.">Chapter 8</button>
+                <button class="chapterBtn green-button" data-chapter="1.Economic and cultural innovation are interconnected.
+                2.The European Renaissance began in successful financial centers.
+                3.Printing technology democratized knowledge.
+                4.Columbus and da Gama embodied the adventurous spirit.
+                5.Asia has experienced a rapid renaissance and industrialization.
+                6.India’s demographic changes are enabling but not guaranteed for success.
+                7.Confidence and a proactive attitude are essential for India’s rise.">Chapter 9</button>
+            </div>
+            <div id="flashcardContent" class="chapter-content" style="display: none; padding: 10px; border: 1px solid #ddd; border-radius: 5px; background: #f9f9f9;"></div>
+        </div>
+
+        <div class="group" id="group">
+            <h2>Group Members</h2>
+            <p>Press each name to view their roll no</p>
+            <div class="members">
+                <div class="member" data-roll="AM.SC.U4CSE24324">Ethen Mathew</div>
+                <div class="member" data-roll="AM.SC.U4CSE24333">Madhav KN</div>
+                <div class="member" data-roll="AM.SC.U4CSE24366">Adinath P</div>
+                <div class="member" data-roll="AM.SC.U4CSE24353">Shaun Paul</div>
+                <div class="member" data-roll="AM.SC.U4CSE24368">Abhinav Kannan</div>
+                <div class="member" data-roll="AM.SC.U4CSE24355">Sidharth Sunil</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Toggle content visibility
+        const summaryBtn = document.getElementById('summaryBtn');
+        const flashcardBtn = document.getElementById('flashcardBtn');
+        const groupBtn = document.getElementById('groupBtn');
+        const summaryDiv = document.getElementById('summary');
+        const flashcardDiv = document.getElementById('flashcard');
+        const groupDiv = document.getElementById('group');
+
+        summaryBtn.addEventListener('click', () => {
+            summaryDiv.style.display = summaryDiv.style.display === 'block' ? 'none' : 'block';
+            flashcardDiv.style.display = 'none';
+            groupDiv.style.display = 'none';
+        });
+
+        flashcardBtn.addEventListener('click', () => {
+            flashcardDiv.style.display = flashcardDiv.style.display === 'block' ? 'none' : 'block';
+            summaryDiv.style.display = 'none';
+            groupDiv.style.display = 'none';
+        });
+
+        groupBtn.addEventListener('click', () => {
+            groupDiv.style.display = groupDiv.style.display === 'block' ? 'none' : 'block';
+            summaryDiv.style.display = 'none';
+            flashcardDiv.style.display = 'none';
+        });
+
+        // Display chapter content
+        const chapterBtns = document.querySelectorAll('.chapterBtn');
+        const chapterContentDiv = document.getElementById('chapterContent');
+        const flashcardContentDiv = document.getElementById('flashcardContent');
+
+        chapterBtns.forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.getAttribute('data-chapter');
+                const parentDiv = button.closest('.content');
+                const contentDiv = parentDiv.id === 'summary' ? chapterContentDiv : flashcardContentDiv;
+                
+                contentDiv.innerText = content;
+                contentDiv.style.display = 'block';
+            });
+        });
+
+        // Toggle roll number display
+        const members = document.querySelectorAll('.member');
+        members.forEach(member => {
+            member.addEventListener('click', () => {
+                const rollNumber = member.getAttribute('data-roll');
+                const displayElement = member.querySelector('.roll-number');
+
+                if (displayElement) {
+                    displayElement.style.display = displayElement.style.display === 'none' ? 'block' : 'none';
+                } else {
+                    const newElement = document.createElement('div');
+                    newElement.className = 'roll-number';
+                    newElement.innerText = rollNumber;
+                    member.appendChild(newElement);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
